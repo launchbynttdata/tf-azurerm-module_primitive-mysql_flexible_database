@@ -21,3 +21,7 @@ output "server_fqdn" {
 output "id" {
   value = module.mysql_database.id
 }
+
+output "resource_group_name" {
+  value = module.resource_group.name
+}

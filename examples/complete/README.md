@@ -60,4 +60,5 @@
 | <a name="output_server_name"></a> [server\_name](#output\_server\_name) | n/a |
 | <a name="output_server_fqdn"></a> [server\_fqdn](#output\_server\_fqdn) | n/a |
 | <a name="output_id"></a> [id](#output\_id) | n/a |
+| <a name="output_resource_group_name"></a> [resource\_group\_name](#output\_resource\_group\_name) | n/a |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
