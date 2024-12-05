@@ -1,0 +1,5 @@
+zone                = "1"
+administrator_login = "sqladmin"
+database_name       = "example"
+database_charset    = "utf8mb3"
+database_collation  = "utf8mb3_general_ci"
