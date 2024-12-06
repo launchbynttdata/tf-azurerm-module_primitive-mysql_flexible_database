@@ -25,3 +25,7 @@ output "id" {
 output "resource_group_name" {
   value = module.resource_group.name
 }
+
+output "database_name" {
+  value = module.mysql_database.name
+}

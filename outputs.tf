@@ -14,3 +14,8 @@ output "id" {
   description = "the ID of the mysql flexible database"
   value       = azurerm_mysql_flexible_database.database.id
 }
+
+output "name" {
+  description = "the name of the mysql flexible database"
+  value       = azurerm_mysql_flexible_database.database.name
+}

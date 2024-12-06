@@ -37,15 +37,30 @@ func TestMysqlDatabase(t *testing.T, ctx types.TestContext) {
 		t.Fatalf("Error getting mysql client: %v", err)
 	}
 
-	t.Run("doesmysqlServerExist", func(t *testing.T) {
-		resourceGroupName := terraform.Output(t, ctx.TerratestTerraformOptions(), "resource_group_name")
-		mysqlName := terraform.Output(t, ctx.TerratestTerraformOptions(), "server_name")
+	armmysqlDbClient, err := armmysql.NewDatabasesClient(subscriptionId, credential, &options)
+	if err != nil {
+		t.Fatalf("Error getting mysql database client: %v", err)
+	}
 
+	resourceGroupName := terraform.Output(t, ctx.TerratestTerraformOptions(), "resource_group_name")
+	mysqlName := terraform.Output(t, ctx.TerratestTerraformOptions(), "server_name")
+	databaseName := terraform.Output(t, ctx.TerratestTerraformOptions(), "database_name")
+
+	t.Run("doesmysqlServerExist", func(t *testing.T) {
 		mysqlServer, err := armmysqlClient.Get(context.Background(), resourceGroupName, mysqlName, nil)
 		if err != nil {
 			t.Fatalf("Error getting mysql server: %v", err)
 		}
 
 		assert.Equal(t, mysqlName, *mysqlServer.Name)
+	})
+
+	t.Run("doesmysqlDatabaseExist", func(t *testing.T) {
+		mysqlDatabase, err := armmysqlDbClient.Get(context.Background(), resourceGroupName, mysqlName, databaseName, nil)
+		if err != nil {
+			t.Fatalf("Error getting mysql database: %v", err)
+		}
+
+		assert.Equal(t, databaseName, *mysqlDatabase.Name)
 	})
 }

@@ -142,4 +142,5 @@ No modules.
 | Name | Description |
 |------|-------------|
 | <a name="output_id"></a> [id](#output\_id) | the ID of the mysql flexible database |
+| <a name="output_name"></a> [name](#output\_name) | the name of the mysql flexible database |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
