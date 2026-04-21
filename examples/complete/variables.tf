@@ -117,7 +117,7 @@ variable "class_env" {
 variable "location" {
   description = "Location of the Mysql Flexible Server"
   type        = string
-  default     = "eastus"
+  default     = "eastus2"
 }
 
 variable "administrator_login" {
