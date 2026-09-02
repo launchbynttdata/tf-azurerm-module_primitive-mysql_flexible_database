@@ -103,19 +103,13 @@ If `make check` target is successful, developer is good to commit the code to pr
 - runs `conftests`. `conftests` make sure `policy` checks are successful.
 - runs `terratest`. This is integration test suit.
 - runs `opa` tests
-<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- BEGIN_TF_DOCS -->
 ## Requirements
 
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.0 |
 | <a name="requirement_azurerm"></a> [azurerm](#requirement\_azurerm) | ~> 3.113 |
-
-## Providers
-
-| Name | Version |
-|------|---------|
-| <a name="provider_azurerm"></a> [azurerm](#provider\_azurerm) | 3.117.0 |
 
 ## Modules
 
@@ -131,11 +125,11 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_mysql_server_name"></a> [mysql\_server\_name](#input\_mysql\_server\_name) | The name of the MySQL server | `string` | n/a | yes |
-| <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | The name of the resource group in which the MySQL server is created | `string` | n/a | yes |
-| <a name="input_database_name"></a> [database\_name](#input\_database\_name) | The name of the database | `string` | n/a | yes |
 | <a name="input_database_charset"></a> [database\_charset](#input\_database\_charset) | The charset of the database | `string` | n/a | yes |
 | <a name="input_database_collation"></a> [database\_collation](#input\_database\_collation) | The collation of the database | `string` | n/a | yes |
+| <a name="input_database_name"></a> [database\_name](#input\_database\_name) | The name of the database | `string` | n/a | yes |
+| <a name="input_mysql_server_name"></a> [mysql\_server\_name](#input\_mysql\_server\_name) | The name of the MySQL server | `string` | n/a | yes |
+| <a name="input_resource_group_name"></a> [resource\_group\_name](#input\_resource\_group\_name) | The name of the resource group in which the MySQL server is created | `string` | n/a | yes |
 
 ## Outputs
 
@@ -143,4 +137,4 @@ No modules.
 |------|-------------|
 | <a name="output_id"></a> [id](#output\_id) | the ID of the mysql flexible database |
 | <a name="output_name"></a> [name](#output\_name) | the name of the mysql flexible database |
-<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+<!-- END_TF_DOCS -->
