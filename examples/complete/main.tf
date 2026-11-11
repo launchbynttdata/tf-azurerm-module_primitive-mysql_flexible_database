@@ -49,7 +49,9 @@ module "resource_group" {
   tags = merge(var.tags, { resource_name = module.resource_names["resource_group"].standard })
 }
 
-# create a random password for the admin user
+# min_lower, min_upper and min_numeric must stay: azurerm requires three of
+# lowercase, uppercase, digits and symbols, and doesn't count "_" as a symbol,
+# so a password whose only special characters are "_" needs the other three.
 resource "random_password" "admin_password" {
   length           = 16
   special          = true
